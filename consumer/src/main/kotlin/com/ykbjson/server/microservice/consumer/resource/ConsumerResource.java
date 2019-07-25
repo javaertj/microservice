@@ -8,26 +8,26 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Description：
+ * Description：消费者Controller
  * Creator：yankebin
  * CreatedAt：2019/7/23
  */
-@RestController
-public class ConsumerResource {
-
-    @Autowired
-    RestTemplate restTemplate;
-
-    @Autowired
-    ProviderClient providerClient;
-
-    @GetMapping("/hi-resttemplate")
-    public String hiResttemplate(){
-        return restTemplate.getForObject("http://nacos-provider/sayHi?name=resttemplate",String.class);
-    }
-
-    @GetMapping("/hi-feign")
-    public String hiFeign(@RequestParam(name = "name", defaultValue = "feign",required = false) String name){
-        return providerClient.sayHi(name);
-    }
-}
+//@RestController
+//public class ConsumerResource {
+//
+//    @Autowired
+//    RestTemplate restTemplate;
+//
+//    @Autowired
+//    ProviderClient providerClient;
+//
+//    @GetMapping("/hi-resttemplate")
+//    public String hiRestTemplate(){
+//        return restTemplate.getForObject("http://nacos-provider/sayHi?name=resttemplate",String.class);
+//    }
+//
+//    @GetMapping("/hi-feign")
+//    public String hiFeign(@RequestParam(name = "name", defaultValue = "feign",required = false) String name){
+//        return providerClient.sayHi(name);
+//    }
+//}
